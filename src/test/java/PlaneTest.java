@@ -6,24 +6,27 @@ import static org.junit.Assert.assertEquals;
 public class PlaneTest {
 
     Plane plane;
+    Passenger passenger;
 
     @Before
     public void before() {
-        plane = new Plane("AirBerlin", PlaneCapacity.AIRBUS320, 12);
+        plane = new Plane("AirBerlin", PlaneCapacity.AIRBUS320);
     }
 
     @Test
     public void hasAirline(){
-        assertEquals("AirBerlin", getAirline());
+
+        assertEquals("AirBerlin", plane.getAirline());
+    }
+
+
+    @Test
+    public void canGetMaxCapacity(){
+        assertEquals(PlaneCapacity.AIRBUS320, plane.getMaxCapacity());
     }
 
     @Test
     public void planeIsEmpty(){
-        assertEquals(0, planePassengersCount());
-    }
-
-    @Test
-    public void canGetMaxCapacity(){
-        assertEquals(PlaneCapacity, plane.getMaxCapacity());
+        assertEquals(0, plane.planePassengersCount());
     }
 }
