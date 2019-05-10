@@ -21,5 +21,5 @@ public class HangarTest {
     public void isEmpty(){
         assertEquals(0, hangar.planeCount());
     }
-    
+
 }
