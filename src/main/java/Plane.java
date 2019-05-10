@@ -4,12 +4,12 @@ public class Plane {
 
     private PlaneCapacity maxCapacity;
     private String airline;
-    private ArrayList<Passenger> passenger;
+    private ArrayList<Passenger> passengers;
 
     public Plane(String airline, PlaneCapacity maxCapacity) {
         this.airline = airline;
         this.maxCapacity = maxCapacity;
-        this.passenger = new ArrayList<>();
+        this.passengers = new ArrayList<>();
     }
 
     public PlaneCapacity getMaxCapacity() {
@@ -20,4 +20,7 @@ public class Plane {
         return airline;
     }
 
+    public int planePassengersCount() {
+        return passengers.size();
+    }
 }
