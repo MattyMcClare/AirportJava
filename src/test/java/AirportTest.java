@@ -57,7 +57,7 @@ public class AirportTest {
     public void canSellTicketForFlight(){
         airport.assignPlaneToFlight(plane, flight1, hangar);
         airport.sellTicketForFlight(flight1, passenger);
-        assertEquals(1, plane.passengersCount());
+        assertEquals(1, flight1.passengersCount());
     }
 
     @Test
@@ -68,19 +68,33 @@ public class AirportTest {
         airport.sellTicketForFlight(flight1, passenger);
         airport.sellTicketForFlight(flight1, passenger);
         airport.sellTicketForFlight(flight1, passenger);
-        assertEquals(4, flight1.allBookingsForFlight());
+        assertEquals(4, flight1.passengersCount());
     }
 
     @Test
-    public void allBookingsForFlight(){
+    public void canMovePassengersToPlane(){
         airport.assignPlaneToFlight(plane, flight, hangar);
         airport.assignPlaneToFlight(plane1, flight1, hangar);
+        flight.addBooking(passenger);
+        flight1.addBooking(passenger);
+        flight1.addBooking(passenger);
+        flight1.addBooking(passenger);
         airport.sellTicketForFlight(flight, passenger);
         airport.sellTicketForFlight(flight1, passenger);
         airport.sellTicketForFlight(flight1, passenger);
         airport.sellTicketForFlight(flight1, passenger);
-        assertEquals(1,flight.allBookingsForFlight());
-        assertEquals(3, flight1.allBookingsForFlight());
+        assertEquals(0,flight.bookingsCount());
+        assertEquals(0, flight1.bookingsCount());
+        assertEquals(1, flight.passengersCount());
+        assertEquals(3, flight1.passengersCount());
     }
+
+//    @Test
+//    public void canAssignRightPlane(){
+//        flight1.addBooking(passenger);
+//        flight1.addBooking(passenger);
+//        flight1.addBooking(passenger);
+//        airport.assignPlaneToFlight(flight, hangar);
+//    }
 
 }

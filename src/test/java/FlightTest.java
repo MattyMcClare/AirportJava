@@ -36,19 +36,25 @@ public class FlightTest {
         flight.addPlane(plane);
         assertEquals(plane, flight.getPlane());
     }
+
+    @Test
+    public void bookingsListStartEmpty(){
+        assertEquals(0, flight.bookingsCount());
+    }
+
+    @Test
+    public void canAddBooking(){
+        flight.addPlane(plane);
+        flight.addBooking(passenger);
+        flight.addBooking(passenger);
+        flight.addBooking(passenger);
+        assertEquals(3, flight.bookingsCount());
+    }
+
     @Test
     public void canAddPassengerToFlight(){
         flight.addPlane(plane);
         flight.addPassengerToFlight(passenger);
-        assertEquals(1, plane.passengersCount());
-    }
-
-    @Test
-    public void allBookingsInPlane(){
-        flight.addPlane(plane);
-        flight.addPassengerToFlight(passenger);
-        flight.addPassengerToFlight(passenger);
-        flight.addPassengerToFlight(passenger);
-        assertEquals(3, flight.allBookingsForFlight());
+        assertEquals(1, flight.passengersCount());
     }
 }

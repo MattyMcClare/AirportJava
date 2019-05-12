@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Hangar {
     private String type;
@@ -25,4 +26,15 @@ public class Hangar {
     public void removePlane(Plane plane) {
         planes.remove(plane);
     }
+
+//    public Plane assignBestPlaneToFlight(Flight flight){
+//        ArrayList<Plane> bestPlanes;
+//        bestPlanes = new ArrayList<>();
+//        for(Plane plane : planes){
+//            if(plane.getType().getValue() >= flight.bookingsCount()){
+//                bestPlanes.add(plane);
+//            }
+//        }
+//        Collections.sort(bestPlanes);
+//    }
 }
