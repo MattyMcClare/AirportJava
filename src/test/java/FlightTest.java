@@ -11,12 +11,12 @@ public class FlightTest {
     @Before
     public void before(){
         plane = new Plane("AirBerlin", PlaneCapacity.AIRBUS320);
-        flight = new Flight(PlaneCapacity.AIRBUS320, 548, "GLA");
+        flight = new Flight(plane, 548, "GLA");
     }
 
     @Test
-    public void hasPlane(){
-        assertEquals(PlaneCapacity.AIRBUS320, flight.getPlane());
+    public void startWithNoPlane(){
+        assertEquals(null, flight.getPlane());
     }
     
     @Test
@@ -27,5 +27,11 @@ public class FlightTest {
     @Test
     public void hasDestination(){
         assertEquals("GLA", flight.getDestination());
+    }
+
+    @Test
+    public void canAddPlane(){
+        flight.addPlane(plane);
+        assertEquals(plane, flight.getPlane());
     }
 }

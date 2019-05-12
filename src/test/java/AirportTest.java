@@ -12,7 +12,7 @@ public class AirportTest {
     @Before
     public void before(){
         plane = new Plane("AirBerlin", PlaneCapacity.AIRBUS320);
-        flight = new Flight(PlaneCapacity.AIRBUS320, 548, "GLA");
+        flight = new Flight(plane, 548, "GLA");
         airport = new Airport("GLA");
     }
 
@@ -26,10 +26,16 @@ public class AirportTest {
         assertEquals("GLA", airport.getType());
     }
 
+    @Test
+    public void hasNoFlights(){
+        assertEquals(0, airport.flightCount());
+    }
 
-//    @Test
-//    public void canCreateFlight(){
-//        assertEquals(flight, airport.createFlight(plane, flight));
-//    }
+    
+    @Test
+    public void canCreateFlight(){
+        airport.createFlight(flight);
+        assertEquals(1, airport.flightCount());
+    }
 
 }
