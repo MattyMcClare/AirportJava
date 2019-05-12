@@ -2,18 +2,18 @@ import java.util.ArrayList;
 
 public class Plane {
 
-    private PlaneCapacity maxCapacity;
+    private PlaneCapacity type;
     private String airline;
     private ArrayList<Passenger> passengers;
 
-    public Plane(String airline, PlaneCapacity maxCapacity) {
+    public Plane(String airline, PlaneCapacity type) {
         this.airline = airline;
-        this.maxCapacity = maxCapacity;
+        this.type = type;
         this.passengers = new ArrayList<>();
     }
 
-    public PlaneCapacity getMaxCapacity() {
-        return maxCapacity;
+    public PlaneCapacity getType() {
+        return type;
     }
 
     public String getAirline() {

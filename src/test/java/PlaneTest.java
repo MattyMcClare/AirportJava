@@ -22,7 +22,7 @@ public class PlaneTest {
 
     @Test
     public void canGetMaxCapacity(){
-        assertEquals(PlaneCapacity.AIRBUS320, plane.getMaxCapacity());
+        assertEquals(PlaneCapacity.AIRBUS320, plane.getType());
     }
 
     @Test
