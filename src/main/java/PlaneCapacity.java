@@ -1,6 +1,6 @@
 public enum PlaneCapacity {
-    AIRBUS320(150),
-    BOEING747(120);
+    AIRBUS320(5),
+    BOEING747(4);
 
     private final int value;
 
