@@ -29,4 +29,8 @@ public class Flight {
     public void addPassengerToFlight(Passenger passenger) {
         plane.addPassenger(passenger);
     }
+
+    public int allBookingsForFlight() {
+        return plane.passengersCount();
+    }
 }
