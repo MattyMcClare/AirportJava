@@ -16,4 +16,13 @@ public class Hangar {
     public int planeCount(){
         return planes.size();
     }
+
+    public void addPlaneToHangar(Plane plane) {
+        planes.add(plane);
+    }
+
+
+    public void removePlane(Plane plane) {
+        planes.remove(plane);
+    }
 }

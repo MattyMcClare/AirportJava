@@ -1,16 +1,16 @@
 public class Flight {
 
-    private String plane;
+    private Plane plane;
     private int flightNumber;
     private String destination;
 
-    public Flight(String plane, int flightNumber, String destination) {
-        this.plane = plane;
+    public Flight(int flightNumber, String destination) {
+        this.plane = null;
         this.flightNumber = flightNumber;
         this.destination = destination;
     }
 
-    public String getPlane() {
+    public Plane getPlane() {
         return plane;
     }
 
@@ -20,5 +20,13 @@ public class Flight {
 
     public String getDestination() {
         return destination;
+    }
+
+    public void addPlane(Plane plane) {
+        this.plane = plane;
+    }
+
+    public void addPassengerToFlight(Passenger passenger) {
+        plane.addPassenger(passenger);
     }
 }
