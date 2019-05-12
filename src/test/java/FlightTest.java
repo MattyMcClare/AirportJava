@@ -42,4 +42,13 @@ public class FlightTest {
         flight.addPassengerToFlight(passenger);
         assertEquals(1, plane.passengersCount());
     }
+
+    @Test
+    public void allBookingsInPlane(){
+        flight.addPlane(plane);
+        flight.addPassengerToFlight(passenger);
+        flight.addPassengerToFlight(passenger);
+        flight.addPassengerToFlight(passenger);
+        assertEquals(3, flight.allBookingsForFlight());
+    }
 }
