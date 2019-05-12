@@ -72,7 +72,7 @@ public class AirportTest {
     }
 
     @Test
-    public void allBookingsForFlight(){
+    public void canMovePassengersToPlane(){
         airport.assignPlaneToFlight(plane, flight, hangar);
         airport.assignPlaneToFlight(plane1, flight1, hangar);
         flight.addBooking(passenger);
@@ -88,5 +88,13 @@ public class AirportTest {
         assertEquals(1, flight.passengersCount());
         assertEquals(3, flight1.passengersCount());
     }
+
+//    @Test
+//    public void canAssignRightPlane(){
+//        flight1.addBooking(passenger);
+//        flight1.addBooking(passenger);
+//        flight1.addBooking(passenger);
+//        airport.assignPlaneToFlight(flight, hangar);
+//    }
 
 }
