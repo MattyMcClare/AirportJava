@@ -20,7 +20,12 @@ public class Plane {
         return airline;
     }
 
-    public int planePassengersCount() {
+    public int passengersCount() {
         return passengers.size();
+    }
+
+
+    public void addPassenger(Passenger passenger) {
+        passengers.add(passenger);
     }
 }

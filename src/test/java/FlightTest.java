@@ -7,11 +7,13 @@ public class FlightTest {
 
     Flight flight;
     Plane plane;
+    Passenger passenger;
 
     @Before
     public void before(){
         plane = new Plane("AirBerlin", PlaneCapacity.AIRBUS320);
-        flight = new Flight(plane, 548, "GLA");
+        flight = new Flight(548, "GLA");
+        passenger = new Passenger("Stefan");
     }
 
     @Test
@@ -33,5 +35,11 @@ public class FlightTest {
     public void canAddPlane(){
         flight.addPlane(plane);
         assertEquals(plane, flight.getPlane());
+    }
+    @Test
+    public void canAddPassengerToFlight(){
+        flight.addPlane(plane);
+        flight.addPassengerToFlight(passenger);
+        assertEquals(1, plane.passengersCount());
     }
 }

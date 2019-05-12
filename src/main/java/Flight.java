@@ -4,7 +4,7 @@ public class Flight {
     private int flightNumber;
     private String destination;
 
-    public Flight(Plane plane, int flightNumber, String destination) {
+    public Flight(int flightNumber, String destination) {
         this.plane = null;
         this.flightNumber = flightNumber;
         this.destination = destination;
@@ -24,5 +24,9 @@ public class Flight {
 
     public void addPlane(Plane plane) {
         this.plane = plane;
+    }
+
+    public void addPassengerToFlight(Passenger passenger) {
+        plane.addPassenger(passenger);
     }
 }

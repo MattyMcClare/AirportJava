@@ -11,6 +11,7 @@ public class PlaneTest {
     @Before
     public void before() {
         plane = new Plane("AirBerlin", PlaneCapacity.AIRBUS320);
+        passenger = new Passenger("Stefan");
     }
 
     @Test
@@ -27,6 +28,11 @@ public class PlaneTest {
 
     @Test
     public void planeIsEmpty(){
-        assertEquals(0, plane.planePassengersCount());
+        assertEquals(0, plane.passengersCount());
+    }
+    @Test
+    public void canAddPassengerToAPlane(){
+        plane.addPassenger(passenger);
+        assertEquals(1, plane.passengersCount());
     }
 }

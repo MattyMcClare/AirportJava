@@ -34,4 +34,8 @@ public class Airport {
         hangar.removePlane(plane);
         flight.addPlane(plane);
     }
+
+    public void sellTicketForFlight(Flight flight, Passenger passenger) {
+        flight.addPassengerToFlight(passenger);
+    }
 }
