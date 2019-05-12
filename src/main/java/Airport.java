@@ -36,6 +36,8 @@ public class Airport {
     }
 
     public void sellTicketForFlight(Flight flight, Passenger passenger) {
-        flight.addPassengerToFlight(passenger);
+        if(flight.getPlane().getType().getValue() > flight.allBookingsForFlight()) {
+            flight.addPassengerToFlight(passenger);
+        }
     }
 }

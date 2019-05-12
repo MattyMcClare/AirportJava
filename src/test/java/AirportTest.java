@@ -61,6 +61,17 @@ public class AirportTest {
     }
 
     @Test
+    public void flightOverBooked(){
+        airport.assignPlaneToFlight(plane1, flight1, hangar);
+        airport.sellTicketForFlight(flight1, passenger);
+        airport.sellTicketForFlight(flight1, passenger);
+        airport.sellTicketForFlight(flight1, passenger);
+        airport.sellTicketForFlight(flight1, passenger);
+        airport.sellTicketForFlight(flight1, passenger);
+        assertEquals(4, flight1.allBookingsForFlight());
+    }
+
+    @Test
     public void allBookingsForFlight(){
         airport.assignPlaneToFlight(plane, flight, hangar);
         airport.assignPlaneToFlight(plane1, flight1, hangar);
