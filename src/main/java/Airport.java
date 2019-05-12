@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Airport {
@@ -19,4 +18,9 @@ public class Airport {
     public String getType() {
         return airportCode;
     }
+
+
+//    public Object createFlight(Plane plane, Flight flight) {
+//       return new Flight(plane.getType(), flight.getFlightNumber(), flight.getDestination());
+//    }
 }

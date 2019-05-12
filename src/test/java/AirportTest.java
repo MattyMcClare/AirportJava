@@ -6,9 +6,13 @@ import static org.junit.Assert.assertEquals;
 public class AirportTest {
 
     Airport airport;
+    Plane plane;
+    Flight flight;
 
     @Before
     public void before(){
+        plane = new Plane("AirBerlin", PlaneCapacity.AIRBUS320);
+        flight = new Flight(PlaneCapacity.AIRBUS320, 548, "GLA");
         airport = new Airport("GLA");
     }
 
@@ -21,4 +25,11 @@ public class AirportTest {
     public void hasType(){
         assertEquals("GLA", airport.getType());
     }
+
+
+//    @Test
+//    public void canCreateFlight(){
+//        assertEquals(flight, airport.createFlight(plane, flight));
+//    }
+
 }

@@ -1,16 +1,16 @@
 public class Flight {
 
-    private String plane;
+    private PlaneCapacity plane;
     private int flightNumber;
     private String destination;
 
-    public Flight(String plane, int flightNumber, String destination) {
+    public Flight(PlaneCapacity plane, int flightNumber, String destination) {
         this.plane = plane;
         this.flightNumber = flightNumber;
         this.destination = destination;
     }
 
-    public String getPlane() {
+    public PlaneCapacity getPlane() {
         return plane;
     }
 
