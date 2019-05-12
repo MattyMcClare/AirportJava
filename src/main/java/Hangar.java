@@ -20,4 +20,9 @@ public class Hangar {
     public void addPlaneToHangar(Plane plane) {
         planes.add(plane);
     }
+
+
+    public void removePlane(Plane plane) {
+        planes.remove(plane);
+    }
 }

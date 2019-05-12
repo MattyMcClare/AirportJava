@@ -30,4 +30,11 @@ public class HangarTest {
         assertEquals(1, hangar.planeCount());
     }
 
+    @Test
+    public void canRemovePlaneFromHangar(){
+        hangar.addPlaneToHangar(plane);
+        hangar.removePlane(plane);
+        assertEquals(0, hangar.planeCount());
+    }
+
 }

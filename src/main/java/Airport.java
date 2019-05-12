@@ -29,4 +29,9 @@ public class Airport {
     public void createFlight(Flight flight) {
         flights.add(flight);
     }
+
+    public void assignPlaneToFlight(Plane plane, Flight flight, Hangar hangar) {
+        hangar.removePlane(plane);
+        flight.addPlane(plane);
+    }
 }
